@@ -5,3 +5,6 @@ F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.csprojAssemblyRe
 F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.csproj.CoreCompileInputs.cache
 F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.exe
 F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.pdb
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\RestSharp.dll
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\RestSharp.xml
+F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.csproj.CopyComplete
