@@ -1,0 +1,7 @@
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\LicenseDB.exe.config
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\LicenseDB.exe
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\LicenseDB.pdb
+F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.csprojAssemblyReference.cache
+F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.csproj.CoreCompileInputs.cache
+F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.exe
+F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.pdb
