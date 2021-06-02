@@ -8,3 +8,5 @@ F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.pdb
 F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\RestSharp.dll
 F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\RestSharp.xml
 F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.csproj.CopyComplete
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\Newtonsoft.Json.dll
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\Newtonsoft.Json.xml

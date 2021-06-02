@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
+using Newtonsoft.Json;
 
 namespace LicenseDB
 {
-    class LsenseKey
+    class LisenseKey
     {
         public string key { set; get; }
         public string machineID { set; get; }
@@ -21,7 +22,7 @@ namespace LicenseDB
             this._dataBaseName = dataBaseName;
             this._apiKey = apiKey;
         }
-        public void CheckHardWareID(string dataBase,string license)
+        public string CheckHardWareID(string dataBase,string license)
         {
             string searchQuary =string.Format(@"{{""key"":""{0}""}}",license);
             string quary = string.Format(@"https://{0}.restdb.io/rest/license?q={1}", dataBase, searchQuary);
@@ -31,7 +32,19 @@ namespace LicenseDB
             var request = new RestRequest(Method.GET);
             request.AddHeader("x-api-key", _apiKey);
             IRestResponse response = client.Execute(request);
-            Console.WriteLine(response.Content);
+            var userLisences = JsonConvert.DeserializeObject <List<LisenseKey>>(response.Content);
+
+
+            try
+            {
+                LisenseKey userLisence = userLisences[0];
+                return userLisence.machineID;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
         }
 
     }
