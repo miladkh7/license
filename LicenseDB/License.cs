@@ -10,7 +10,9 @@ namespace LicenseDB
 {
     class LisenseKey
     {
+        public string _id { set; get; }
         public string key { set; get; }
+
         public string machineID { set; get; }
     }
     class License
@@ -33,11 +35,12 @@ namespace LicenseDB
             request.AddHeader("x-api-key", _apiKey);
             IRestResponse response = client.Execute(request);
             var userLisences = JsonConvert.DeserializeObject <List<LisenseKey>>(response.Content);
-
+         
 
             try
             {
                 LisenseKey userLisence = userLisences[0];
+                Console.WriteLine(userLisence._id);
                 return userLisence.machineID;
             }
             catch (Exception)
