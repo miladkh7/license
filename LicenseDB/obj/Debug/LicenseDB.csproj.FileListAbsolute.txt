@@ -10,3 +10,5 @@ F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\RestSharp.xml
 F:\Programing Excercise\LicenseDB\LicenseDB\obj\Debug\LicenseDB.csproj.CopyComplete
 F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\Newtonsoft.Json.dll
 F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\Newtonsoft.Json.xml
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\DeviceId.dll
+F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\DeviceId.xml

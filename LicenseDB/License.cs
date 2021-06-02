@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 using Newtonsoft.Json;
-
+using DeviceId;
 namespace LicenseDB
 {
     class LisenseKey
@@ -17,10 +17,17 @@ namespace LicenseDB
     }
     class License
     {
+
         string _apiKey= "5e0c5fac2b88e41892f7dd511abb5469b1a09";
         string _dataBaseName = "gholami-c537";
         string _id;
-        string HWID, licenseKey;
+        string  licenseKey;
+        string HWID = new DeviceIdBuilder()
+        .AddMachineName()
+        .AddProcessorId()
+        .AddMotherboardSerialNumber()
+        .AddSystemDriveSerialNumber()
+        .ToString();
         public License(string dataBaseName,string apiKey)
         {
             this._dataBaseName = dataBaseName;
@@ -29,6 +36,7 @@ namespace LicenseDB
         }
         public string CheckHardWareID(string dataBase,string license)
         {
+            Console.WriteLine(this.HWID);
             string searchQuary =string.Format(@"{{""key"":""{0}""}}",license);
             string quary = string.Format(@"https://{0}.restdb.io/rest/license?q={1}", dataBase, searchQuary);
             Console.WriteLine(quary);
@@ -67,8 +75,12 @@ namespace LicenseDB
             string updateCommand = string.Format(@"{{""key"":""{0}"",""machineID"":""{1}""}}", this.licenseKey, HWID);
             request.AddParameter("application/json",updateCommand, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
-            Console.WriteLine(response.Content);
-            Console.WriteLine("salam");
+            //Console.WriteLine(response.Content);
+            //Console.WriteLine("salam");
+        }
+        public bool CheckLicense()
+        {
+            
         }
 
     }
