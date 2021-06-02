@@ -7,6 +7,11 @@ using RestSharp;
 
 namespace LicenseDB
 {
+    class LsenseKey
+    {
+        public string key { set; get; }
+        public string machineID { set; get; }
+    }
     class License
     {
         string _apiKey= "5e0c5fac2b88e41892f7dd511abb5469b1a09";
