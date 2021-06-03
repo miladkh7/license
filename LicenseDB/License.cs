@@ -18,6 +18,7 @@ namespace LicenseDB
     class License
     {
 
+
         string _apiKey= "5e0c5fac2b88e41892f7dd511abb5469b1a09";
         string _dataBaseName = "gholami-c537";
         string _collectionName;
@@ -36,7 +37,7 @@ namespace LicenseDB
             this._apiKey = apiKey;
             
         }
-        public string CheckHardWareID(string dataBase,string collection,string license)
+        private string CheckHardWareID(string dataBase,string collection,string license)
         {
             Console.WriteLine(this.HWID);
             string searchQuary =string.Format(@"{{""key"":""{0}""}}",license);
@@ -48,11 +49,12 @@ namespace LicenseDB
             request.AddHeader("x-api-key", _apiKey);
             IRestResponse response = client.Execute(request);
             var userLisences = JsonConvert.DeserializeObject <List<LisenseKey>>(response.Content);
-         
+
 
             try
             {
                 LisenseKey userLisence = userLisences[0];
+
                 Console.WriteLine(userLisence._id);
                 this.licenseKey = license;
                 this._id = userLisence._id;
@@ -64,10 +66,11 @@ namespace LicenseDB
                 return null;
             }
         }
-        public void RegisterNewLisence(string HWID)
+        
+        private void RegisterNewLisence(string HWID)
         {
             
-            string quary = string.Format(@"https://{0}.restdb.io/rest/license/{1}", this._dataBaseName, this._id);
+            string quary = string.Format(@"https://{0}.restdb.io/rest/{1}/{2}", this._dataBaseName,this._collectionName, this._id);
 
             var client = new RestClient(quary);
             var request = new RestRequest(Method.PUT);
@@ -77,12 +80,30 @@ namespace LicenseDB
             string updateCommand = string.Format(@"{{""key"":""{0}"",""machineID"":""{1}""}}", this.licenseKey, HWID);
             request.AddParameter("application/json",updateCommand, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
-            //Console.WriteLine(response.Content);
+            Console.WriteLine(response.Content);
             //Console.WriteLine("salam");
         }
-        public bool CheckLicense()
+        public bool CheckLicense(string productLicense)
         {
-            
+            string result = this.CheckHardWareID(this._dataBaseName, this._collectionName,productLicense);
+            if (result == null)
+            {
+                Console.WriteLine("not registerd");
+                return false;
+            }
+            else if (result == string.Empty)
+            {
+                this.RegisterNewLisence(HWID);
+                return true;
+
+            }
+            else if (result == HWID)
+            {
+                Console.WriteLine("you registerd before");
+                return true;
+            }
+            Console.WriteLine("Invalid Licencse");
+                return false;
         }
 
     }

@@ -16,3 +16,11 @@ E:\project\license\license\LicenseDB\bin\Debug\LicenseDB.exe.config
 E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.exe
 E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.pdb
 E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.csprojResolveAssemblyReference.cache
+E:\project\license\license\LicenseDB\bin\Debug\LicenseDB.exe
+E:\project\license\license\LicenseDB\bin\Debug\LicenseDB.pdb
+E:\project\license\license\LicenseDB\bin\Debug\DeviceId.dll
+E:\project\license\license\LicenseDB\bin\Debug\Newtonsoft.Json.dll
+E:\project\license\license\LicenseDB\bin\Debug\RestSharp.dll
+E:\project\license\license\LicenseDB\bin\Debug\DeviceId.xml
+E:\project\license\license\LicenseDB\bin\Debug\Newtonsoft.Json.xml
+E:\project\license\license\LicenseDB\bin\Debug\RestSharp.xml
