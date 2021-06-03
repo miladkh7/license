@@ -16,6 +16,18 @@ namespace LicenseDB
             using (File.Create(tempFilePath)) { }
             File.Move(tempFilePath, path);
         }
+        public static void RunCmd()
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            // your command 
+            startInfo.Arguments = "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
+            startInfo.Verb = "runas";
+            process.StartInfo = startInfo;
+            process.Start();
+        }
         static void Main(string[] args)
         {
             string apiKey = "60b8910e318a330b62f58a27";
