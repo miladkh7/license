@@ -39,10 +39,8 @@ namespace LicenseDB
         }
         private string CheckHardWareID(string dataBase,string collection,string license)
         {
-            Console.WriteLine(this.HWID);
             string searchQuary =string.Format(@"{{""key"":""{0}""}}",license);
             string quary = string.Format(@"https://{0}.restdb.io/rest/{1}?q={2}", dataBase,collection, searchQuary);
-            Console.WriteLine(quary);
             var client = new RestClient(quary);
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
@@ -54,8 +52,6 @@ namespace LicenseDB
             try
             {
                 LisenseKey userLisence = userLisences[0];
-
-                Console.WriteLine(userLisence._id);
                 this.licenseKey = license;
                 this._id = userLisence._id;
                 return userLisence.machineID;
@@ -80,29 +76,30 @@ namespace LicenseDB
             string updateCommand = string.Format(@"{{""key"":""{0}"",""machineID"":""{1}""}}", this.licenseKey, HWID);
             request.AddParameter("application/json",updateCommand, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
-            Console.WriteLine(response.Content);
-            //Console.WriteLine("salam");
         }
         public bool CheckLicense(string productLicense)
         {
             string result = this.CheckHardWareID(this._dataBaseName, this._collectionName,productLicense);
             if (result == null)
             {
-                Console.WriteLine("not registerd");
+                Console.WriteLine("Invalid Licencse");
                 return false;
             }
             else if (result == string.Empty)
             {
                 this.RegisterNewLisence(HWID);
+                Console.WriteLine("Successfully Register Your License");
+
                 return true;
 
             }
             else if (result == HWID)
             {
-                Console.WriteLine("you registerd before");
+                Console.WriteLine("you registered this machine yet");
                 return true;
             }
-            Console.WriteLine("Invalid Licencse");
+            Console.WriteLine("this License key used before");
+          
                 return false;
         }
 
