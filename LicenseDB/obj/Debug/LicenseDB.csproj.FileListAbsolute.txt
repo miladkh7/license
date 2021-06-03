@@ -12,3 +12,7 @@ F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\Newtonsoft.Json.dll
 F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\Newtonsoft.Json.xml
 F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\DeviceId.dll
 F:\Programing Excercise\LicenseDB\LicenseDB\bin\Debug\DeviceId.xml
+E:\project\license\license\LicenseDB\bin\Debug\LicenseDB.exe.config
+E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.exe
+E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.pdb
+E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.csprojResolveAssemblyReference.cache
