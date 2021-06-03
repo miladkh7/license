@@ -24,3 +24,7 @@ E:\project\license\license\LicenseDB\bin\Debug\RestSharp.xml
 E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.csprojResolveAssemblyReference.cache
 E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.exe
 E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.pdb
+E:\project\license\license\LicenseDB\bin\Debug\LicenseDB.exe.manifest
+E:\project\license\license\LicenseDB\bin\Debug\LicenseDB.application
+E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.exe.manifest
+E:\project\license\license\LicenseDB\obj\Debug\LicenseDB.application

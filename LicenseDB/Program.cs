@@ -9,22 +9,34 @@ namespace LicenseDB
 {
     class Program
     {
+        public static void CreateEmptyFile(string path)
+        {
+            string tempFilePath = Path.Combine(Path.GetDirectoryName(path),
+                Guid.NewGuid().ToString());
+            using (File.Create(tempFilePath)) { }
+            File.Move(tempFilePath, path);
+        }
         static void Main(string[] args)
         {
             string apiKey = "60b8910e318a330b62f58a27";
             string dataBaseName = "mylicenseserver-0137";
             string collection = "license";
-            string filename = @"C:\Users\Milad\Desktop\testLi";
+            string filename = @"C:\testLicense";
+            
             string userLicense;
             License myLisence = new License(dataBaseName, collection, apiKey);
-
             Console.WriteLine("License Manager");
-            Console.WriteLine("please enter your license");
-            userLicense = Console.ReadLine();
-            if (myLisence.CheckLicense(userLicense))
+            while (true)
             {
-                using (File.Create(filename)) ;
-                Console.WriteLine("your product acitve succeslly");
+               
+                Console.WriteLine("please enter your license");
+                userLicense = Console.ReadLine();
+                if (myLisence.CheckLicense(userLicense))
+                {
+                    CreateEmptyFile(filename);
+                    Console.WriteLine("your product acitve succeslly");
+                    break;
+                }
             }
             Console.ReadKey();
 
